@@ -374,10 +374,10 @@ public:
 	// Select objects to paint with
 	BOOL SelectPen(int Style, int Width, LONG Colour, paint_options options = draw_normal);
 	BOOL SelectPen(LineStyle *pStyle, paint_options options);
-	BOOL SelectBrush(COLORREF Colour, int index = 0);
+	BOOL SelectBrush(COLORREF Colour, int index = 0, bool fill = false);
 	BOOL SelectBrush(FillStyle *pStyle)
 	{
-		return SelectBrush(pStyle->Colour, pStyle->Index);
+		return SelectBrush(pStyle->Colour, pStyle->Index, true);
 	}
 	BOOL SelectBrush()
 	{
